@@ -1,0 +1,86 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type="text/javascript").
+      var target_rate;
+      var now_rate;
+      var rate_1;
+      var rate_2;
+      var rate_3;
+      var i;
+      var j;
+      var k;
+      var part;
+      var ans;
+      function check_rate(){
+        now_rate = document.getElementById("div_1").value;
+          target_rate = document.getElementById("div_2").value;
+          rate_1 = document.getElementById("div_3").value;
+          rate_2 = document.getElementById("div_4").value;
+          rate_3 = document.getElementById("div_5").value;
+          console.log(now_rate);
+          console.log(target_rate);
+          console.log(rate_1);
+          console.log(rate_2);
+          console.log(rate_3);
+        };
+
+      function calculate(){
+          var points_rest = target_rate - now_rate;
+          console.log(points_rest);
+          for(i=0;i<=100;i++){
+              console.log(i);
+              for(j=0;j<=100;j++){
+                  console.log(j);
+                  for(k=0;k<100;k++){
+                      console.log(k);
+                      part = points_rest - i*rate_1 - j*rate_2 - k*rate_3;
+                      console.log(part);
+                      if(part == 0){
+                          console.log(i);
+                          console.log(j);
+                          console.log(k);
+                          ans = new Array(i, j, k);
+                          alert("第一种课程：" + ans[0]+ "次"+"\n" + "第二种课程：" + ans[1]+ "次"+"\n" + "第三种课程：" + ans[2]+ "次"+"\n");
+                          return ans;
+                      }
+                  }
+              }
+          }
+
+
+      };
+      function myans(){
+          var rest = target_rate - now_rate;
+          var big_num = parseInt(rest/rate_1);
+          var mid_num = parseInt((rest - (rate_1*big_num))/rate_2);
+          var small_num = parseInt((rest-(rate_1*big_num)-(rate_2*mid_num))/rate_3);
+          for(big_num;big_num>=0;big_num--){
+              console.log("big_num: " + big_num);
+              var remain = rest - (big_num * rate_1 + mid_num * rate_2 + small_num *rate_3);
+              if (remain==0){
+                  ans = new Array(big_num, mid_num, small_num);
+                  alert("第一种课程：" + ans[0] + "次" + "\n" + "第二种课程：" + ans[1] + "次" + "\n" + "第三种课程：" + ans[2] + "次" + "\n");
+                  return 0;
+              }
+              else{
+                  for(mid_num;mid_num>=0;mid_num--){
+                      console.log("mid_num: " + mid_num);
+                      small_num = parseInt((rest-(rate_1*big_num)-(rate_2*mid_num))/rate_3);
+                      remain = rest - (big_num * rate_1 + mid_num * rate_2 + small_num *rate_3);
+                      if (remain == 0) {
+                          ans = new Array(big_num, mid_num, small_num);
+                          alert("第一种课程：" + ans[0] + "次" + "\n" + "第二种课程：" + ans[1] + "次" + "\n" + "第三种课程：" + ans[2] + "次" + "\n");
+                          return 0;
+                      }
+                  }
+
+              }
+          }
+          alert("卡分？不存在的。");
+          return 0;
+      };
+  body
+    block content

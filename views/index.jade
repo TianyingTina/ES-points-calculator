@@ -1,0 +1,30 @@
+extends layout
+
+
+
+block content
+    h1= title
+    h1 ES 卡分计算器
+    p 版权属于@山大王勺勺子
+    p copyright belongs to @TianyingTina
+    p github：github.com/TianyingTina
+    div
+        p 现在分数
+    input(type="rate", name="rate_1", placeholder="Amazing☆~", id="div_1")
+    div
+        p 目标分数
+    input(type="rate", name="rate_2",placeholder="Amazing☆~", id="div_2")
+    div
+        p 最大一节课程可获得
+    input(type="rate", name="rate_3",placeholder="Amazing☆~",id="div_3")
+    div
+        p 普通一节课程可获得
+    input(type="rate", name="rate_3",placeholder="Amazing☆~",id="div_4")
+    div
+        p 最小一节课程可获得
+    input(type="rate", name="rate_3",placeholder="Amazing☆~",id="div_5")
+    div(style="padding-top:15px")
+    input(type="button" name="button" value="确定输入这些分数" onclick="check_rate()")
+    div(style="padding-top:15px")
+    input(type="button" name="button" value="~☆Amazing 开始计算卡分 Amazing☆~" onclick="myans()")
+
