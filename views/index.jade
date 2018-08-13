@@ -7,24 +7,29 @@ block content
     h1 ES 卡分计算器
     p 版权属于@山大王勺勺子
     p copyright belongs to @TianyingTina
-    p github：github.com/TianyingTina
+    p Project Github：https://github.com/TianyingTina/ES-points-calculator
     div
         p 现在分数
+        p(style="font-size:10px") (Your Points Now)
     input(type="rate", name="rate_1", placeholder="Amazing☆~", id="div_1")
     div
         p 目标分数
+        p(style="font-size:10px") (Your Target Points)
     input(type="rate", name="rate_2",placeholder="Amazing☆~", id="div_2")
     div
-        p 最大一节课程可获得
+        p 最多一节课程可获得
+        p(style="font-size:10px") (Most Points a Course can obtain)
     input(type="rate", name="rate_3",placeholder="Amazing☆~",id="div_3")
     div
         p 普通一节课程可获得
+        p(style="font-size:10px") (Normal Points a Course can obtain)
     input(type="rate", name="rate_3",placeholder="Amazing☆~",id="div_4")
     div
-        p 最小一节课程可获得
+        p 最少一节课程可获得
+        p(style="font-size:10px") (Least Points a Course can obtain)
     input(type="rate", name="rate_3",placeholder="Amazing☆~",id="div_5")
     div(style="padding-top:15px")
-    input(type="button" name="button" value="确定输入这些分数" onclick="check_rate()")
-    div(style="padding-top:15px")
-    input(type="button" name="button" value="~☆Amazing 开始计算卡分 Amazing☆~" onclick="myans()")
+    input(type="button" style="font-size:20px" name="button" value="确定输入这些分数" onclick="check_rate()")
+    div(style="padding-top:15px; font-size:20px")
+    input(type="button" style="font-size:20px" name="button" value="~☆Amazing 开始计算卡分 Amazing☆~" onclick="myans()")
 

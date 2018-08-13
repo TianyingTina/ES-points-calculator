@@ -1,0 +1,1 @@
+This is an ES points calculator for game Ensemble Stars [China] points calculating.
